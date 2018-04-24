@@ -39,3 +39,14 @@ def imagen_obtener_ruta_archivo(imagen_id):
 	else:
 		rpta = constants['SERVER_URL'] + tmp[0]['nombre_generado'] 
 	return rpta
+
+@imagen_view.route('/obtener_nombre_archivo/<imagen_id>', method='GET')
+def imagen_obtener_nombre_archivo(imagen_id):
+	Imagen = Query()
+	tmp = imagenes.search(Imagen.id == imagen_id)
+	rpta = None
+	if tmp == []:
+		rpta = ''
+	else:
+		rpta = tmp[0]['nombre_generado'] 
+	return rpta

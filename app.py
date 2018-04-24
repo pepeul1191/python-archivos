@@ -27,4 +27,4 @@ def send_static(filename):
 if __name__ == '__main__':
 	app.mount('/imagen', imagen_view)
 	app.mount('/extension', extension_view)
-	app.run(host='localhost', port=3031, debug=True, reloader=True)
+	app.run(host='192.168.1.8', port=3031, debug=True, reloader=True)
